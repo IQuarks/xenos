@@ -58,4 +58,4 @@ rm $PREFIX/etc/motd
 
 # Launching the xenify script inside the Debian proot-distro environment
 echo "\nLaunching xenify script inside Debian proot-distro..."
-proot-distro login debian -- bash <(curl -sL https://raw.githubusercontent.com/IQuarks/xenos/main/xenify.sh) $INSTALL_SSH
+proot-distro login debian -- bash <(curl -sL https://raw.githubusercontent.com/IQuarks/xenos/main/xenify.sh) $([ "$INSTALL_SSH" = true ] && echo "--ssh-client")
